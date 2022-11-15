@@ -1,7 +1,9 @@
 import NotificationButton from '../notificationButton';
 import './styles.css';
 
-import DatePicker from "react-datepicker";
+import DatePicker, {registerLocale} from "react-datepicker";
+import pt from 'date-fns/locale/pt';
+registerLocale("pt-BR", pt);
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from 'react';
 
@@ -20,6 +22,7 @@ function SalesCard() {
             <div>
                 <div className="dsmeta-form-control-container">
                     <DatePicker
+                        locale="pt-BR"
                         selected={minDate}
                         onChange={(date: Date) => setMinDate(date)}
                         className="dsmeta-form-control"
@@ -28,6 +31,7 @@ function SalesCard() {
                 </div>
                 <div className="dsmeta-form-control-container">
                     <DatePicker
+                        locale="pt-BR"
                         selected={maxDate}
                         onChange={(date: Date) => setMaxDate(date)}
                         className="dsmeta-form-control"
